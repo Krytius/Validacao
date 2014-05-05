@@ -35,6 +35,9 @@
  */
 class Validacao
 {
+	// =========================================================
+	// Validação CPF
+	// =========================================================
 
 	/**
 	 * Método que retona se CPF é valido
@@ -74,6 +77,10 @@ class Validacao
 
 		return ($digito !== intval($a[strlen($a)-1])) ? false : true;
 	}
+
+	// =========================================================
+	// Validação CNPJ
+	// =========================================================
 
 	/**
 	 * Método que retona se CNPJ é valido
@@ -126,6 +133,24 @@ class Validacao
 
 		return ($digito !== intval($a[strlen($a)-1])) ? false : true;;
 	}
+
+	// =========================================================
+	// Validação Email
+	// =========================================================
+
+	/**
+	 * Função que válida email
+	 * @param  {String} $email String que contém o email
+	 * @return {bool}       Retorno true = válido / false = inválido
+	 */
+	public function validadorEmail($email) {
+		if(ereg("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$", $email)) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+	}
+
 }
 
 ?>

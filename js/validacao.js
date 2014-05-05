@@ -3,13 +3,13 @@
  *
  * @version v.1.0.0
  * @author Elvis Ferreira Coelho
- * 
+ *
  * Created by Elvis Ferreira Coelho on 2014-02-05. Please report any bug at http://elviscoelho.net
- * 
+ *
  * Copyright (c) 2014 Elvis Ferreira Coelho http://elviscoelho.net
- * 
+ *
  * The MIT License (http://www.opensource.org/licenses/mit-license.php)
- * 
+ *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
  * files (the "Software"), to deal in the Software without
@@ -18,7 +18,7 @@
  * copies of the Software, and to permit persons to whom the
  * Software is furnished to do so, subject to the following
  * conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
@@ -33,7 +33,11 @@
  */
 
 function Validacao() {
-	
+
+	// =========================================================
+	// Validação CPF
+	// =========================================================
+
 	/**
 	 * Método que retona se CPF é valido
 	 *
@@ -69,13 +73,17 @@ function Validacao() {
 		return true;
 	}
 
+	// =========================================================
+	// Validação CNPJ
+	// =========================================================
+
 	/**
 	 * Método que retona se CNPJ é valido
 	 *
 	 * @param  {String|Interger} cnpj Aceita esses tipos [48.884.656/0001-40, 48884656000140]
 	 * @return {Bool}     True => Valido / False => Inválido
 	 */
-	var validaCNPJ =  function (cnpj) {
+	var validaCNPJ = function(cnpj) {
 
 		cnpj = "" + cnpj;
 		cnpj = cnpj.replace(/[^\w\s]/gi, "");
@@ -116,8 +124,27 @@ function Validacao() {
 		return true;
 	}
 
+	// =========================================================
+	// Validação Email
+	// =========================================================
+
+	/**
+	 * Função que válida email
+	 * @param  {String} email String que contém o email
+	 * @return {bool}       Retorno true = válido / false = inválido
+	 */
+	var validaEmail = function(email) {
+		if (/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/gi.test(email)) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
+
 	return {
 		validadorCPF: validaCPF,
-		validaCNPJ: validaCNPJ
+		validaCNPJ: validaCNPJ,
+		validadorEmail: validaEmail
 	}
 }
