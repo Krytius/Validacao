@@ -43,7 +43,7 @@ class Validacao
 	 * @param  {String|Interger} cpf Aceita esses tipos [111.111.111-11, 11111111111]
 	 * @return {Bool}     True => Valido / False => Inválido
 	 */
-	public function validaCPF($cpf) {
+	public function validadorCPF($cpf) {
 		$cpf = preg_replace('/[^\w\s]/', "", $cpf);
 		
 		if(!$this->verificadorCPF(10, substr($cpf, 0, -1))) {
@@ -82,7 +82,7 @@ class Validacao
 	 * @param  {String|Interger} cnpj Aceita esses tipos [48.884.656/0001-40, 48884656000140]
 	 * @return {Bool}     True => Valido / False => Inválido
 	 */
-	public function validaCNPJ ($cnpj) {
+	public function validadorCNPJ ($cnpj) {
 		$cnpj = preg_replace("/[^\w\s]/", "", $cnpj);
 		
 		// Verificador

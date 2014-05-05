@@ -33,13 +33,14 @@
  */
 
 function Validacao() {
+	
 	/**
 	 * Método que retona se CPF é valido
 	 *
 	 * @param  {String|Interger} cpf Aceita esses tipos [111.111.111-11, 11111111111]
 	 * @return {Bool}     True => Valido / False => Inválido
 	 */
-	function validaCPF(cpf) {
+	var validaCPF = function(cpf) {
 
 		cpf = "" + cpf;
 		cpf = cpf.replace(/[^\w\s]/gi, "");
@@ -74,7 +75,7 @@ function Validacao() {
 	 * @param  {String|Interger} cnpj Aceita esses tipos [48.884.656/0001-40, 48884656000140]
 	 * @return {Bool}     True => Valido / False => Inválido
 	 */
-	function validaCNPJ(cnpj) {
+	var validaCNPJ =  function (cnpj) {
 
 		cnpj = "" + cnpj;
 		cnpj = cnpj.replace(/[^\w\s]/gi, "");
@@ -113,5 +114,10 @@ function Validacao() {
 		}
 
 		return true;
+	}
+
+	return {
+		validadorCPF: validaCPF,
+		validaCNPJ: validaCNPJ
 	}
 }

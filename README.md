@@ -1,7 +1,6 @@
 Projeto Validação
 ==========
 
-
 ###
 
     Version: 1.0.0
@@ -35,3 +34,54 @@ The MIT License (http://www.opensource.org/licenses/mit-license.php)
  OTHER DEALINGS IN THE SOFTWARE.
 
 ###
+
+
+### Métodos
+
+##### Validação de CPF #####
+
+> Método de validação de CPF (Pessoa Física). Aceita tanto estes formato "111.111.111-02" / "11111111111".
+
+###
+Retorno true ou false.
+TRUE = CPF válido
+FALSE = CPF Inválido
+###
+
+> Javascript
+
+```js
+var validador = new Validacao();
+validador.validadorCPF("111.111.111-11");
+```
+
+> PHP
+
+```php
+$validador = new Validacao();
+$validador->validadorCPF("111.111.111-11");
+```
+
+##### Validação de CNPJ #####
+
+> Método de validação de CNPJ (Pessoa Jurídica). Aceita tanto estes formato "99.343.617/0001-77" / "99343617000177".
+
+###
+Retorno true ou false.
+TRUE = CNPJ válido
+FALSE = CNPJ Inválido
+###
+
+> Javascript
+
+```js
+var validador = new Validacao();
+validador.validadorCNPJ("111.111.111-11");
+```
+
+> PHP
+
+```php
+$validador = new Validacao();
+$validador->validadorCNPJ("111.111.111-11");
+```
