@@ -73,7 +73,7 @@ class Validacao
 		}
 
 		$resto = ($soma % 11);
-		$digito = ($resto > 2) ? (11 - $resto) : 0;
+		$digito = ($resto >= 2) ? (11 - $resto) : 0;
 
 		return ($digito !== intval($a[strlen($a)-1])) ? false : true;
 	}
@@ -129,7 +129,7 @@ class Validacao
 		}
 
 		$resto = ($soma % 11);
-		$digito = ($resto > 2) ? (11 - $resto) : 0;
+		$digito = ($resto >= 2) ? (11 - $resto) : 0;
 
 		return ($digito !== intval($a[strlen($a)-1])) ? false : true;;
 	}
